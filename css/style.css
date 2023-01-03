@@ -4,6 +4,11 @@ header {
   background-size: cover;
 }
 
+.mq .mqBox .title {
+  background: url(../img/mqBg.png) no-repeat center;
+  background-size: cover;
+}
+
 .gameType {
   background: url(../img/bg.png) no-repeat center;
   background-size: cover;
@@ -49,9 +54,29 @@ header {
   background-size: 100%;
 }
 
+.contentBox .gnameBox {
+  background: url(../img/yellowPink.png) no-repeat center;
+  background-size: 100%;
+}
+
+.gameBlock:nth-of-type(2) .gnameBox,
+.gameBlock:nth-of-type(4) .gnameBox,
+.gameBlock:nth-of-type(5) .gnameBox,
+.gameBlock:nth-of-type(7) .gnameBox {
+  background: url(../img/bluePurple.png) no-repeat center;
+  background-size: 100%;
+}
+
 footer .bottom {
   background: url(../img/footerBG.png) no-repeat center;
   background-size: cover;
+}
+
+footer li:hover a,
+footer li:active a,
+footer li.active a {
+  background: url(../img/footer_HOV.png) no-repeat center;
+  background-size: 200%;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -395,6 +420,8 @@ html header .center .right .bottom li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   position: relative;
   cursor: pointer;
 }
@@ -413,19 +440,9 @@ html header .center .right .bottom li:hover, html header .center .right .bottom 
 html header .center .right .bottom li:hover p, html header .center .right .bottom li:active p, html header .center .right .bottom li.active p {
   color: #ffffff;
 }
-@media only screen and (max-width: 1788px) {
-  html header .center .right .bottom li p {
+@media only screen and (max-width: 1600px) {
+  html header .center .right .bottom .center li p {
     font-size: 19px;
-  }
-}
-@media only screen and (max-width: 1742px) {
-  html header .center .right .bottom li p {
-    font-size: 18.5px;
-  }
-}
-@media only screen and (max-width: 1713px) {
-  html header .center .right .bottom li p {
-    font-size: 18px;
   }
 }
 @media only screen and (max-width: 1692px) {
@@ -442,14 +459,6 @@ html header .center .right .bottom li:hover p, html header .center .right .botto
   html header .center .right .bottom li p {
     font-size: 14px;
     margin: 0 5px;
-  }
-}
-@media only screen and (max-width: 1412px) {
-  html header .bottom {
-    padding-left: 15.5%;
-  }
-  html header .bottom .center li p {
-    font-size: 15px;
   }
 }
 @media only screen and (max-width: 1314px) {
@@ -588,8 +597,6 @@ html .mainWrap .mq .mqBox {
 html .mainWrap .mq .mqBox .title {
   width: 10%;
   height: 100%;
-  background: linear-gradient(45deg, #04b5df 25%, #02eaf0 0, #02eaf0 50%, #04b5df 0, #04b5df 75%, #02eaf0 0);
-  background-size: 28px 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -604,7 +611,7 @@ html .mainWrap .mq .mqBox .title {
   z-index: 10;
 }
 html .mainWrap .mq .mqBox .title p {
-  color: #272727;
+  color: #ffffff;
   font-size: 20px;
   font-weight: bold;
   white-space: nowrap;
@@ -621,7 +628,7 @@ html .mainWrap .mq .mqBox .textBox {
   overflow: hidden;
 }
 html .mainWrap .mq .mqBox .textBox .content {
-  color: #272727;
+  color: #000000;
   font-size: 20px;
   font-weight: bold;
   white-space: nowrap;
@@ -709,6 +716,8 @@ html .mainWrap .gameType .content .gameBlock .contentBox .mainObj {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
   z-index: 5;
 }
 html .mainWrap .gameType .content .gameBlock .contentBox .mainObj.abc {
@@ -747,8 +756,9 @@ html .mainWrap .gameType .content .gameBlock .contentBox .mainObj.card {
   bottom: 65px;
 }
 html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox {
-  width: 90%;
-  height: 43%;
+  width: 110%;
+  height: 0;
+  padding-top: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,38 +769,49 @@ html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox {
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  bottom: -3px;
+  bottom: -11px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 10;
-  background: linear-gradient(45deg, #ffbe35 25%, #ffd354 0, #ffd354 50%, #ffbe35 0, #ffbe35 75%, #ffd354 0);
-  background-size: 42px 42px;
-}
-html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox::after {
-  content: "";
-  width: 6.9%;
-  height: 100%;
-  background: #f9746f;
-  position: absolute;
-}
-html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox::before {
-  border-left: 4.9px dotted #ffffff;
-  left: -6.9%;
-}
-html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox::after {
-  border-right: 4.9px dotted #ffffff;
-  right: -6.9%;
-}
-html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox span {
-  width: 15px;
-  height: 10px;
-  border-radius: 0 0 0 50px;
 }
 html .mainWrap .gameType .content .gameBlock .contentBox .gnameBox p {
   color: #000000;
   font-size: 1.5rem;
   font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+html .mainWrap .gameType .content .gameBlock .contentBox:hover .mainObj, html .mainWrap .gameType .content .gameBlock .contentBox:active .mainObj, html .mainWrap .gameType .content .gameBlock .contentBox.active .mainObj {
+  -webkit-animation: HOV 1s 0.3s ease-in-out;
+          animation: HOV 1s 0.3s ease-in-out;
+}
+@-webkit-keyframes HOV {
+  0% {
+    -webkit-transform: skew(0deg, 0deg) translate(-50%);
+            transform: skew(0deg, 0deg) translate(-50%);
+  }
+  100% {
+    -webkit-transform: skew(3deg, 2deg) translate(-50%);
+            transform: skew(3deg, 2deg) translate(-50%);
+  }
+}
+@keyframes HOV {
+  0% {
+    -webkit-transform: skew(0deg, 0deg) translate(-50%);
+            transform: skew(0deg, 0deg) translate(-50%);
+  }
+  100% {
+    -webkit-transform: skew(3deg, 2deg) translate(-50%);
+            transform: skew(3deg, 2deg) translate(-50%);
+  }
+}
+html .mainWrap .gameType .content .gameBlock .contentBox:hover .gnameBox, html .mainWrap .gameType .content .gameBlock .contentBox:active .gnameBox, html .mainWrap .gameType .content .gameBlock .contentBox.active .gnameBox {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
 }
 html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox {
   background: -webkit-gradient(linear, left bottom, left top, from(#96124d), to(#ff5e88));
@@ -799,23 +820,6 @@ html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox, html .m
 html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox:hover, html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox:active, html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox.active, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox:hover, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox:active, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox.active, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox:hover, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox:active, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox.active, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox:hover, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox:active, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox.active {
   background: -webkit-gradient(linear, left top, left bottom, from(#96124d), to(#ff5e88));
   background: linear-gradient(to bottom, #96124d 0%, #ff5e88 100%);
-}
-html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox .gnameBox, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox .gnameBox, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox .gnameBox, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox .gnameBox {
-  background: linear-gradient(45deg, #04b5df 25%, #02eaf0 0, #02eaf0 50%, #04b5df 0, #04b5df 75%, #02eaf0 0);
-  background-size: 42px 42px;
-}
-html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox .gnameBox::after, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox .gnameBox::after, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox .gnameBox::after, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox .gnameBox::after {
-  content: "";
-  width: 7%;
-  height: 100%;
-  background: #d581e2;
-  position: absolute;
-}
-html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox .gnameBox::before, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox .gnameBox::before {
-  left: -6.9%;
-}
-html .mainWrap .gameType .content .gameBlock:nth-of-type(2) .contentBox .gnameBox::after, html .mainWrap .gameType .content .gameBlock:nth-of-type(4) .contentBox .gnameBox::after, html .mainWrap .gameType .content .gameBlock:nth-of-type(5) .contentBox .gnameBox::after, html .mainWrap .gameType .content .gameBlock:nth-of-type(7) .contentBox .gnameBox::after {
-  right: -6.9%;
 }
 html .mainWrap .gameType .content .gameBlock:nth-of-type(even) {
   -webkit-transform: translateY(-15%);
@@ -878,6 +882,8 @@ html footer nav ul li a {
           align-items: center;
   text-decoration: none;
   background: transparent;
+  -webkit-transition: 3s all;
+  transition: 3s all;
 }
 html footer nav ul li a p {
   color: #000000;
@@ -887,8 +893,7 @@ html footer nav ul li a p {
   white-space: nowrap;
 }
 html footer nav ul li:hover a, html footer nav ul li:active a, html footer nav ul li.active a {
-  background: linear-gradient(45deg, #ffa718 25%, #ff9312 0, #ff9312 50%, #ffa718 0, #ffa718 75%, #ff9312 0);
-  background-size: 42px 42px;
+  background-position-x: 100%;
 }
 html footer .bottom {
   width: 100%;

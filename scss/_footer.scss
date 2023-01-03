@@ -33,7 +33,7 @@ footer {
                     align-items: center;
                     text-decoration: none;
                     background: transparent;
-                    
+                    transition: 3s all;
 
                     p {
                         color: $mainFont;
@@ -46,7 +46,7 @@ footer {
 
                 &:hover,&:active,&.active {
                     a {
-                        @include footer_ACT;
+                        background-position-x: 100%;
                     }
                 }
             }

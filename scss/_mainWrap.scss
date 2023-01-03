@@ -52,7 +52,6 @@
             .title {
                 width: 10%;
                 height: 100%;
-                @include mqTitle_BG;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -61,7 +60,7 @@
                 z-index: 10;
     
                 p {
-                    color: $mqTitle;
+                    color: $subFont;
                     font-size: 20px;
                     font-weight: bold;
                     white-space: nowrap;
@@ -135,6 +134,7 @@
                         bottom: 50px;
                         left: 50%;
                         transform: translateX(-50%);
+                        transition: 0.3s all;
                         z-index: 5;
 
                         &.abc {
@@ -175,28 +175,45 @@
                     }
                     
                     .gnameBox {
-                        width: 90%;
-                        height: 43%;
+                        width: 110%;
+                        height: 0;
+                        padding-top: 40%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         position: absolute;
-                        bottom: -3px;
+                        bottom: -11px;
                         left: 50%;
                         transform: translateX(-50%);
                         z-index: 10;
-                        @include gName_yellow;
-
-                        span {
-                            width: 15px;
-                            height: 10px;
-                            border-radius: 0 0 0 50px;
-                        }
 
                         p {
                             color: $mainFont;
                             font-size: 1.5rem;
                             font-weight: bold;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+
+                    &:hover,&:active,&.active {
+                        .mainObj {
+                            animation: HOV 1s 0.3s ease-in-out;
+
+                            @keyframes HOV {
+                                0% {
+                                    transform: skew(0deg, 0deg) translate(-50%);
+                                }
+                                100% {
+                                    transform: skew(3deg, 2deg) translate(-50%);
+                                }
+                            }
+                        }
+
+                        .gnameBox {
+                            filter: brightness(1.1);
                         }
                     }
                 }
@@ -207,10 +224,6 @@
                 &:nth-of-type(7){
                     .contentBox {
                         @include cont_BG_Pink;
-
-                        .gnameBox {
-                            @include gName_blue;
-                        }
                     }
                 }
                 
